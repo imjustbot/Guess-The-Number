@@ -34,9 +34,5 @@ if risposta is not None:
 
         st.write("Un po' di più")
 
-    if st.button("Rigioca"):
 
-        del st.session_state.segreto
-
-        st.rerun()
 
