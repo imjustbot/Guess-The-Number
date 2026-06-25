@@ -1,5 +1,6 @@
 import streamlit as st
 import random
+import time
 
 
 numeri_possibili = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
@@ -18,6 +19,12 @@ if risposta is not None:
 
         st.success(f"Indovinato! Il numero era proprio {st.session_state.segreto}")
         st.balloons()
+
+        time.sleep(3.0)
+
+        del st.session_state.segreto
+
+        st.rerun()
 
     elif risposta > st.session_state.segreto:
 
