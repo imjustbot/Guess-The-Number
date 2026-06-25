@@ -12,21 +12,24 @@ st.title("Indovina il numero (da 1 a 15)")
 
 risposta = st.selectbox("NUMERO SEGRETO:", numeri_possibili, index=None, placeholder="Scegli il numero...")
 
-if risposta == st.session_state.segreto:
+if risposta is not None:
 
-    st.write(f"Indovinato! Il numero era proprio {st.session_state.segreto}")
+    if risposta == st.session_state.segreto:
 
-elif risposta > st.session_state.segreto:
+        st.success(f"Indovinato! Il numero era proprio {st.session_state.segreto}")
+        st.balloons()
 
-    st.write("Un po' di meno")
+    elif risposta > st.session_state.segreto:
 
-elif risposta < st.session_state.segreto:
+        st.write("Un po' di meno")
 
-    st.write("Un po' di più")
+    elif risposta < st.session_state.segreto:
 
-if st.button("Rigioca"):
+        st.write("Un po' di più")
 
-    del st.session_state.segreto
+    if st.button("Rigioca"):
 
-    st.rerun()
+        del st.session_state.segreto
+
+        st.rerun()
 
