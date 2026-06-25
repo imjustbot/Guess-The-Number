@@ -22,7 +22,7 @@ if risposta is not None:
 
         time.sleep(3.0)
 
-        del st.session_state.segreto
+        st.session_state.clear()
 
         st.rerun()
 
