@@ -9,7 +9,7 @@ if "segreto" not in st.session_state:
     st.session_state.segreto = random.randint(1, 50)
 
 
-st.title("Indovina il numero (da 1 a 100)")
+st.title("Indovina il numero (da 1 a 50)")
 
 risposta = st.selectbox("NUMERO SEGRETO:", numeri_possibili, index=None, placeholder="Scegli il numero...", key=st.session_state.segreto)
 
@@ -33,6 +33,10 @@ if risposta is not None:
     elif risposta < st.session_state.segreto:
 
         st.write("Un po' di più")
+
+
+
+
 
 
 
